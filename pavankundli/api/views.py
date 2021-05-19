@@ -9,12 +9,12 @@ class GetDashaView(APIView):
 
     serializer_class = GetDashaSerializer
 
-    def calculate(self, first_cal_date, expect_date, data: list[dict[str, int]], index, interval):
+    def calculate(self, first_cal_date, expect_date, data, index, interval):
 
         next_date: datetime = None
         prev_date = first_cal_date
 
-        interval: float = interval / 120
+        interval = interval / 120
 
         if self.call == 0:
             return
@@ -67,11 +67,9 @@ class GetDashaView(APIView):
 
         start_planet: str = planet
 
-        total: int = 120
+        total = 120
 
-        index: int
-
-        data: list = [
+        data = [
             {
                 'ketu': 7
             },
